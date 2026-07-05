@@ -1,1 +1,24 @@
-
+R3# configure terminal
+R3(config)# interface loopback 0
+R3(config-if)# ip address 8.8.8.8 255.255.255.255
+R3(config-if)# end
+R3# show ip interface brief
+R3# configure terminal
+R3(config)# interface g1/0
+R3(config-if)# ip address 192.168.34.3 255.255.255.0
+R3(config-if)# no shutdown
+R3(config-if)# exit
+R3(config)# interface g2/0
+R3(config-if)# ip address 192.168.35.3 255.255.255.0
+R3(config-if)# no shutdown
+R3(config-if)# end
+R3# configure terminal
+R3(config)# hostname GOOGLE
+GOOGLE# show ip route
+GOOGLE# configure terminal
+GOOGLE(config)# ip route 192.168.14.0 255.255.255.0 192.168.34.4
+GOOGLE(config)# ip route 192.168.15.0 255.255.255.0 192.168.35.5
+GOOGLE(config)# ip route 192.168.1.0 255.255.255.0 192.168.35.5 10
+GOOGLE(config)# ip route 192.168.1.0 255.255.255.0 192.168.34.4 20
+GOOGLE(config)# do show ip route
+GOOGLE(config)# do write
