@@ -1,1 +1,16 @@
-
+R5# configure terminal
+R5(config)# hostname TATA
+TATA(config)# interface g2/0
+TATA(config-if)# ip address 192.168.35.5 255.255.255.0
+TATA(config-if)# no shutdown
+TATA(config-if)# exit
+TATA(config)# ip route 8.8.8.8 255.255.255.255 192.168.35.3
+TATA(config)# exit
+TATA# show ip route
+TATA(config)# interface g1/0
+TATA(config-if)# ip address 192.168.15.5 255.255.255.0
+TATA(config-if)# no shutdown
+TATA(config)# exit
+TATA# configure terminal
+TATA(config)# ip route 192.168.1.0 255.255.255.0 192.168.15.1
+TATA(config)# do write
