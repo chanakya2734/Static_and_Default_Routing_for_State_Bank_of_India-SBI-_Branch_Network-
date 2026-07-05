@@ -1,1 +1,4 @@
-
+PC1> ip dhcp
+DDORA IP 192.168.1.1/24 GW 192.168.1.100
+PC1> save
+PC1> trace 8.8.8.8
